@@ -6,4 +6,12 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
+  routeRules: {
+    "/": { cors: true, prerender: true, ssr: true },
+    "/api/**": { cors: true },
+    "https://equran.id/api/v2/**": { 
+      cors: true,
+      proxy: { to: "http:localhost:3000/**"}
+    },
+  }
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1 class="text-blue-500">Fetch data:</h1>
-    <p v-if="fact">{{ fact }}</p>
+    <p v-if="surat">{{ surat }}</p>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      fact: null,
+      surat: null,
     }
   },
   methods: {
@@ -22,10 +22,7 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-          this.fact = data
-        })
-        .catch((err) => {
-          console.error(err)
+          this.surat = data
         })
     },
   },
@@ -34,11 +31,3 @@ export default {
   },
 }
 </script>
-
-<style>
-button {
-  padding: 12px 32px;
-  font-size: 16px;
-  border-radius: 8px;
-}
-</style>
