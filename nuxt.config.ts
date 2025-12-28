@@ -5,21 +5,27 @@ export default defineNuxtConfig({
       "/**": { isr: true },
     },
   },
+
   modules: [
     '@nuxtjs/tailwindcss',
   ],
+
   css: ['~/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   tailwindcss: {
     exposeConfig: true,
     viewer: true,
   },
+
   devtools: { enabled: true },
+
   routeRules: {
     "/": { cors: true, prerender: true, ssr: true },
     "/api/**": { cors: true },
@@ -27,5 +33,7 @@ export default defineNuxtConfig({
       cors: true,
       proxy: { to: "http:localhost:3000/**" }
     },
-  }
+  },
+
+  compatibilityDate: "2025-12-29"
 })
